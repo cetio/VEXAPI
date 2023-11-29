@@ -41,4 +41,4 @@ Contributions are welcome! If you have improvements, updates, or corrections to 
  
 ## License
  
-This repository is licensed under [LICENSE](LICENSE.txt), only because I legally have to.
+This repository is licensed under [Apache-2.0 license](LICENSE.txt), only because I legally have to.
