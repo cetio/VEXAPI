@@ -10,6 +10,7 @@
 extern "C" {
 #endif
 
+uint32_t vexCompetitionStatus();
 int vexDevicesGetNumber();
 int vexDevicesGetNumberByType(int type);
 uint32_t** vexDevicesGet();
