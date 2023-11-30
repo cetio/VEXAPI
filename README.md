@@ -5,22 +5,6 @@ This repository contains decompiled files and inferred header files for the VEX 
 > [!WARNING]
 > The headers provided in this repository are based on decompilation and inference. They might not be completely accurate or up-to-date depending on when you read this. The private API here is not directly supported or endorsed by VEX Robotics and you shouldn't rely on it.
  
-## Contents
- 
-- `v5_util.c.obj.i64`
-- `v5_startup.c.obj.i64`
-- `v5_fstubs.c.obj.i64`
-- `v5_apiversions.c.obj.i64`
-- `v5_apijumps.c.obj.i64`
-- `v5_apigraphics.c.obj.i64`
-- `libv5rt.a`
-- `LICENSE.txt`
-- `include/v5_apigraphics.h`
-- `include/v5_apijump.h`
-- `include/v5_apiversions.h`
-- `include/v5_startup.h`
-- `include/v5_util.h`
- 
 ## Overview
  
 The VEX API and all software for bots are written in ARM64 (so it appears)
