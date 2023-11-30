@@ -9,6 +9,13 @@ int main()
     vexCompetitionStatus fnptr = FUNC;
     uint8_t* ptr = (uint8_t *)fnptr;
 
+    if (mprotect((void*)ptr, 24, PROT_READ | PROT_WRITE | PROT_EXEC) == -1) 
+    {
+        // Error occurred while changing memory protection
+        perror("mprotect");
+        return 1; 
+    }
+
     //LDR   R3, =0x37FC000:
     ptr[0] = 0x04;
     ptr[1] = 0x00;
