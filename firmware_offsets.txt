@@ -1,5 +1,28 @@
 Firmware Base Address                0x037fc000
 
+# It is possible that fields starting with 0x037fc... are actually functions
+# Needs testing
+vexos+displayOffsetX                 0x000153e8
+vexos+displayOffsetY                 0x000153ec
+vexos+critSecFlags                   0x037fcfb0
+vexos+userData1                      0x037fcfc8
+vexos+userData2                      0x037fcfcc
+vexos+userData3                      0x037fcfd0
+vexos+userData4                      0x037fcfd4
+vexos+stdDataAddr                    0x037fcfa4
+vexos+stdDataSize                    0x037fcfa8
+vexos+stdDataPtr                     0x037fcfa0
+vexos+taskMain                       0x000102d0
+vexos+lastTimeSleep                  0x00015400
+vexos+scratchMemoryPtrUnk            0x037fc018
+vexos+impurePtr                      0x0001000c
+vexos+stdlibVersion1                 0x00010008
+vexos+systemVersion                  0x037fd000
+vexos+systemVersion2                 0x037fd004
+vexos+sdkVersion                     0x1020000
+vexos+vexosVersion                   0x037fd008
+vexos+cpuVersion                     0x037fd00c
+
 vexStdlibMismatchError               0x010
 # Talk to James!
 vexScratchMemoryPtr                  0x01c
