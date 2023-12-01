@@ -22,6 +22,7 @@ vexos+systemVersion2                 0x037fd004
 vexos+sdkVersion                     0x1020000
 vexos+vexosVersion                   0x037fd008
 vexos+cpuVersion                     0x037fd00c
+vexos+date                           0x0384b11b
 
 vexStdlibMismatchError               0x010
 # Talk to James!
