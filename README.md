@@ -1,6 +1,6 @@
 # VEX API
  
-This repository contains decompiled files and inferred header files for the VEX Robotics private API.
+This repository contains dumped, disassembled, or decompiled files and inferred header files for the VEX Robotics private API.
  
 > [!WARNING]
 > The headers provided in this repository are based on decompilation and inference. They might not be completely accurate or up-to-date depending on when you read this. The private API here is not directly supported or endorsed by VEX Robotics and you shouldn't rely on it.
@@ -43,10 +43,12 @@ It's incredibly difficult to get your hands on the firmware for VEX robots, and 
 As such, I and a friend have taken the liberty upon ourselves to dump the memory of a VEX brain and save that dump to an SD card, that way we can reverse engineer the firmware code.
 
 v5_apijump works as a jump table from the private API to the firmware, with all of the firmware functions starting at address 0x37FC000. Since it works as a jump table, it's pretty easy to use Ghidra to see the signatures of all of the functions in the firmware when decompiling.
+
+When decompiling apijump, you may notice a lot of references to "__vex_function_prolog," I'm pretty sure that this function is used to set up the calls into the firmware; but I cannot confirm this since I'm unable to find where the actual code for this is, and it isn't worth my time since it's just a thunk function used as an intermediary.
  
 ## Contributing
  
-Contributions are welcome! If you have improvements, updates, or corrections to the provided headers or decompiled files, please consider submitting a pull request.
+Contributions are welcome! If you have improvements, updates, or corrections to the provided headers or disassembled files, please consider submitting a pull request.
  
 ## License
  

@@ -1,0 +1,15 @@
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\bin\Debug\net8.0\Sorter.exe
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\bin\Debug\net8.0\Sorter.deps.json
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\bin\Debug\net8.0\Sorter.runtimeconfig.json
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\bin\Debug\net8.0\Sorter.dll
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\bin\Debug\net8.0\Sorter.pdb
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\obj\Debug\net8.0\Sorter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\obj\Debug\net8.0\Sorter.AssemblyInfoInputs.cache
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\obj\Debug\net8.0\Sorter.AssemblyInfo.cs
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\obj\Debug\net8.0\Sorter.csproj.CoreCompileInputs.cache
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\obj\Debug\net8.0\Sorter.sourcelink.json
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\obj\Debug\net8.0\Sorter.dll
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\obj\Debug\net8.0\refint\Sorter.dll
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\obj\Debug\net8.0\Sorter.pdb
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\obj\Debug\net8.0\Sorter.genruntimeconfig.cache
+C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\obj\Debug\net8.0\ref\Sorter.dll
