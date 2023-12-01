@@ -3,11 +3,13 @@
 
 typedef bool (*vexCompetitionStatus)();
 
+// This code is used for arbitrarily disabling autonomous mode (or competition mode)
+// Can be modified to forcibly enable competition mode, perchance
 int main() 
 {
     // Replace 'FUNC' with an actual function pointer
-    vexCompetitionStatus fnptr = FUNC;
-    uint8_t* ptr = (uint8_t *)fnptr;
+    vexCompetitionStatus pFn = FUNC;
+    uint8_t* ptr = (uint8_t*)pFn;
 
     if (mprotect((void*)ptr, 24, PROT_READ | PROT_WRITE | PROT_EXEC) == -1) 
     {
