@@ -32,7 +32,7 @@ BOOT.bin:
 
 system_0.elf (aka: VEXos)
 - Data - 0x03400000 - 0x0349C014
-- Export table - 0x037C000 - 0x037FD040
+- Export address table - 0x037C000 - 0x037FD040
 - User code segment stub - 0x03800000 - 0x03800050
 
 Apijump is a jump table to the export table of the firmware. All addresses in apijump are documented in [firmware-offsets](/firmware_offsets.txt) and jump to another function after execution.
