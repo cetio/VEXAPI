@@ -13,13 +13,13 @@ extern "C" {
 uint32_t  vexCompetitionStatus( void );
 int vexDevicesGetNumber( void );
 int vexDevicesGetNumberByType(int type);
-uint32_t** vexDevicesGet();
+uint32_t** vexDevicesGet( void );
 uint32_t* vexDeviceGetByIndex(uint32_t index)
 uint32_t vexDeviceGetStatus(uint32_t device);
-int vexDeviceGetTimestamp();
+int vexDeviceGetTimestamp( void );
 int vexDeviceGetTimestampByIndex(uint32_t index);
-int vexDeviceButtonStateGet();
-uint32_t* vexDisplayErase();
+int vexDeviceButtonStateGet( void );
+uint32_t* vexDisplayErase( void );
 uint32_t* vexDisplayScroll(uint32_t x, uint32_t y);
 uint32_t* vexDisplayScrollRect(uint32_t x, uint32_t y, uint32_t width, uint32_t height);
 uint32_t* vexDisplayCopyRect(uint32_t* buffer, uint32_t sourceX, uint32_t sourceY, uint32_t destWidth, uint32_t destHeight);
