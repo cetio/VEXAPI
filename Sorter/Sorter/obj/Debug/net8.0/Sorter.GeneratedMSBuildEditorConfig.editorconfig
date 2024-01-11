@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Sorter
-build_property.ProjectDir = C:\Users\cet\Desktop\VexAPI\Sorter\Sorter\
+build_property.ProjectDir = C:\Users\stake\source\repos\VEXAPI\VEXAPI\Sorter\Sorter\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

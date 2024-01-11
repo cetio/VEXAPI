@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cet\\Desktop\\VexAPI\\Sorter\\Sorter\\Sorter.csproj": {}
+    "C:\\Users\\stake\\source\\repos\\VEXAPI\\VEXAPI\\Sorter\\Sorter\\Sorter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cet\\Desktop\\VexAPI\\Sorter\\Sorter\\Sorter.csproj": {
+    "C:\\Users\\stake\\source\\repos\\VEXAPI\\VEXAPI\\Sorter\\Sorter\\Sorter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cet\\Desktop\\VexAPI\\Sorter\\Sorter\\Sorter.csproj",
+        "projectUniqueName": "C:\\Users\\stake\\source\\repos\\VEXAPI\\VEXAPI\\Sorter\\Sorter\\Sorter.csproj",
         "projectName": "Sorter",
-        "projectPath": "C:\\Users\\cet\\Desktop\\VexAPI\\Sorter\\Sorter\\Sorter.csproj",
-        "packagesPath": "C:\\Users\\cet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cet\\Desktop\\VexAPI\\Sorter\\Sorter\\obj\\",
+        "projectPath": "C:\\Users\\stake\\source\\repos\\VEXAPI\\VEXAPI\\Sorter\\Sorter\\Sorter.csproj",
+        "packagesPath": "C:\\Users\\stake\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\stake\\source\\repos\\VEXAPI\\VEXAPI\\Sorter\\Sorter\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\cet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stake\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
