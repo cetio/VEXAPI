@@ -22,11 +22,7 @@ Lastly, v5_apiuser (not private API) could let you transmit and communicate with
 
 ## Firmware & apijump
 
-It's incredibly difficult to get your hands on the firmware for VEX robots, and given that their IDE is obfuscated and has anti-sandbox protections, it would appear that VEX really does not take kindly to their software being spied into.
-
-As such, I and a friend have taken the liberty upon ourselves to dump the memory of a VEX brain and save that dump to an SD card, that way we can reverse engineer the firmware code.
-
-v5_apijump works as a jump table from the private API to the firmware, with all of the firmware functions starting at address 0x37FC000. Since it works as a jump table, it's pretty easy to use Ghidra to see the signatures of all of the functions in the firmware when decompiling.
+To get a copy of the firmware see hatf0's work on [vex-v5-research](https://github.com/hatf0/vex-v5-research/tree/master)
 
 When decompiling apijump, you may notice a lot of references to "__vex_function_prolog," I'm pretty sure that this function is used to set up the calls into the firmware; but I cannot confirm this since I'm unable to find where the actual code for this is, and it isn't worth my time since it's just a thunk function used as an intermediary.
  
