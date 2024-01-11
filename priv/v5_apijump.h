@@ -10,8 +10,8 @@
 extern "C" {
 #endif
 
-uint32_t vexCompetitionStatus();
-int vexDevicesGetNumber();
+uint32_t  vexCompetitionStatus( void );
+int vexDevicesGetNumber( void );
 int vexDevicesGetNumberByType(int type);
 uint32_t** vexDevicesGet();
 uint32_t* vexDeviceGetByIndex(uint32_t index)
@@ -35,8 +35,14 @@ uint32_t* vexDisplayCircleDraw(uint32_t* buffer, uint32_t centerX, uint32_t cent
 uint32_t* vexDisplayRectFill(uint32_t x, uint32_t y, uint32_t sideLength, uint32_t color);
 uint32_t* vexDisplayRectClear(uint32_t x, uint32_t y, uint32_t sideLength);
 uint32_t* vexDisplayRectDraw(uint32_t* buffer, uint32_t x, uint32_t y, uint32_t sideLength);
-void vexDisplayString(const char* str);
-void vexDisplayStringAt(uint32_t x, uint32_t y, const char* str);
+void vexDisplayPrintf( int32_t xpos, int32_t ypos, uint32_t bOpaque, const char *format, ... );
+void vexDisplayString( const int32_t nLineNumber, const char *format, ... );
+void vexDisplayStringAt( int32_t xpos, int32_t ypos, const char *format, ... );
+void vexDisplayBigString( const int32_t nLineNumber, const char *format, ... );
+void vexDisplayBigStringAt( int32_t xpos, int32_t ypos, const char *format, ... );
+void vexDisplaySmallStringAt( int32_t xpos, int32_t ypos, const char *format, ... );
+void vexDisplayCenteredString( const int32_t nLineNumber, const char *format, ...);
+void vexDisplayBigCenteredString( const int32_t nLineNumber, const char *format, ...);
 void vexDeviceGenericRadioTransmit(uint32_t index, uint8_t* buffer, int32_t length);
 
 
