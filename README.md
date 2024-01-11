@@ -24,6 +24,19 @@ Lastly, v5_apiuser (not private API) could let you transmit and communicate with
 
 To get a copy of the firmware see hatf0's work on [vex-v5-research](https://github.com/hatf0/vex-v5-research/tree/master)
 
+BOOT.bin:
+- FSBL.elf (first-stage bootloader)
+- design_1_wrapper.bit (bitstream for FPGA)
+- MainLoop.elf (unclear - appears to be empty)
+- system_0.elf (shared userspace RTOS for CPU0 / CPU1)
+
+system_0.elf (aka: VEXos)
+- Data - 0x03400000 - 0x0349C014
+- Export table - 0x037C000 - 0x037FD040
+- User code segment stub - 0x03800000 - 0x03800050
+
+Apijump is a jump table to the export table of the firmware. All addresses in apijump are documented in [firmware-offsets](/firmware_offsets.txt) and jump to another function after execution.
+
 When decompiling apijump, you may notice a lot of references to "__vex_function_prolog," I'm pretty sure that this function is used to set up the calls into the firmware; but I cannot confirm this since I'm unable to find where the actual code for this is, and it isn't worth my time since it's just a thunk function used as an intermediary.
  
 ## Contributing
