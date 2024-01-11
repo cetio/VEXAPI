@@ -478,4 +478,4 @@ vexBackgroundProcessing              0xf74
 vexTaskGet                           0xf7c
 vexSystemErrorMessageSet             0xf94
 vexSystemFwUpdateRequest             0xf98
-vexIntegrityCheck 0xf9c
+vexIntegrityCheck                    0xf9c
