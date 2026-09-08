@@ -10,7 +10,7 @@ The offset map is also used by
 VEXos system API boundary in Rust without linking the V5 C runtime.
 
 > [!NOTE]
-> I work more on this, but I do not currently have access to VEX hardware. The firmware and API snapshots
+> I plan to work more on this, but I don't have access to VEX hardware. The firmware and API snapshots
 > were last updated January 11, 2024 and will remain at those versions unless contributors provide newer artifacts or
 > update automation is added. Contributions are appreciated, especially from anyone able to verify results on current
 > hardware.
