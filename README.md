@@ -1,48 +1,78 @@
-# VEX API
- 
-This repository contains dumped, disassembled, or decompiled files and inferred header files for the VEX Robotics private API.
- 
+# VEXAPI
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue)](LICENSE.txt)
+
+VEXAPI documents the low-level API between VEX V5 user programs and VEXos. It maps the user jump table, identifies
+private functions, and shows how the public API reaches the firmware.
+
+The offset map is also used by
+[`vex-sdk-jumptable`](https://github.com/vexide/vex-sdk/tree/main/packages/vex-sdk-jumptable), which provides the same
+VEXos system API boundary in Rust without linking the V5 C runtime.
+
+> [!NOTE]
+> I work more on this, but I do not currently have access to VEX hardware. The firmware and API snapshots
+> were last updated January 11, 2024 and will remain at those versions unless contributors provide newer artifacts or
+> update automation is added. Contributions are appreciated, especially from anyone able to verify results on current
+> hardware.
+
 > [!WARNING]
-> The headers provided in this repository are based on decompilation and inference. They might not be completely accurate or up-to-date depending on when you read this. The private API here is not directly supported or endorsed by VEX Robotics and you shouldn't rely on it.
- 
-## Overview
- 
-The VEX API and all software for bots are written in ARM64 (so it appears)
+> This repository is unofficial and is not affiliated with or supported by VEX Robotics. The inferred headers and
+> offsets are semi-incomplete and may be specific to the archived runtime and firmware.
 
-If you have eyes and a brain, you can mostly infer what the files do. 
-v5_apijump contained a lot of functions, so I only added the important signatures, namely the drawing and device information functions. It contains almost all of the important stuff.
+## Contents
 
-v5_apigraphics contains the double buffering and rendering code seemingly, but is pretty scarce, so I added all the signatures.
-The rest of the files seem relatively useless to me, but anyone is welcome to add onto what is here.
- 
-Rendering code in the VEX Brain seems to use v5_apijump instead of the double buffer code, but I doubt the distinction matters.
-Additionally, you could modify/hook functions in apijump to overclock your robot, or do the same with functions in the competition part of the VEX private API (I didn't add it here) to disable and override autonomous mode.
- 
-Lastly, v5_apiuser (not private API) could let you transmit and communicate with your robot, without needing to use the middleman required in competitions, just a neat thing.
+| Path | Contents |
+| --- | --- |
+| [`public/`](public/README.md) | Public C and C++ VEXcode headers from an unknown SDK release. |
+| [`private/`](private/README.md) | Partial headers I inferred from objects in `libv5rt.a`. |
+| [`firmware/`](firmware/README.md) | VEXos 1.1.2.0 and files extracted from a V5 boot image. |
+| [`firmware_offsets.txt`](firmware_offsets.txt) | User jump-table offsets and a few firmware memory locations. |
+| [`libv5rt.a`](libv5rt.a) | V5 runtime wrappers, startup code, and C++ implementations. |
+| [`experiments/`](experiments/README.md) | Two unfinished proof-of-concept programs. |
+| [`sorter.py`](sorter.py) | Sorts `name: 0x...` input by address. |
 
-## Firmware & apijump
+## How It Works
 
-To get a copy of the firmware see hatf0's work on [vex-v5-research](https://github.com/hatf0/vex-v5-research/tree/master)
+V5 programs link against `libv5rt.a`, a 32-bit ARM EABI runtime library. It contains startup and C runtime support,
+the C++ VEXcode classes, higher-level device helpers, and low-level wrappers that call into VEXos. The headers in
+[`public/`](public/README.md) describe much of this API.
 
-BOOT.bin:
-- FSBL.elf (first-stage bootloader)
-- design_1_wrapper.bit (bitstream for FPGA)
-- MainLoop.elf (unclear - appears to be empty)
-- system_0.elf (shared userspace RTOS for CPU0 / CPU1)
+VEXos exposes system functions through a user jump table beginning at `0x037fc000` in this version of the firmware.
+Most slots are four bytes apart. [`firmware_offsets.txt`](firmware_offsets.txt) maps API names to byte offsets from the
+start of that table, with multiple names at the same offset where the runtime exposes aliases.
 
-system_0.elf (aka: VEXos)
-- Data - 0x03400000 - 0x0349C014
-- Export address table - 0x037C000 - 0x037FD040
-- User code segment stub - 0x03800000 - 0x03800050
+The names and offsets come from symbols and disassembly in `libv5rt.a`, with the VEXos image providing the underlying
+functions and data. [`private/`](private/README.md) contains a small set of hand-written headers; the offset map covers
+much more of the API.
 
-Apijump is a jump table to the export table of the firmware. All addresses in apijump are documented in [firmware-offsets](/firmware_offsets.txt) and jump to another function after execution.
+The extraction and analysis steps are not automated yet, so uncertain entries still need to be checked against the
+matching runtime and firmware.
 
-When decompiling apijump, you may notice a lot of references to "__vex_function_prolog," I'm pretty sure that this function is used to set up the calls into the firmware; but I cannot confirm this since I'm unable to find where the actual code for this is, and it isn't worth my time since it's just a thunk function used as an intermediary.
- 
+## Utility
+
+`sorter.py` reads lines from standard input, discards lines without a colon, and sorts the remaining lines by the
+hexadecimal value after `": "`:
+
+```sh
+python3 sorter.py < labels.txt
+```
+
+It works with address-label output copied from analysis tools.
+
+## Roadmap
+
+- Update the public and private headers against a current VEXcode SDK and runtime library.
+- Document firmware image structures and in-memory field layouts for each firmware version.
+- Write Python tooling to download, version, extract, and inventory VEXos firmware and API files.
+- Generate or validate the jump-table map from those files instead of updating it by hand.
+
 ## Contributing
- 
-Contributions are welcome! If you have improvements, updates, or corrections to the provided headers or disassembled files, please consider submitting a pull request.
- 
+
+Contributions are welcome. For changes to signatures, offsets, or field layouts, include the firmware or SDK version
+and enough evidence to reproduce the result. Updates that add newer firmware or API files, improve the Python tooling,
+or verify behavior on current hardware are especially useful.
+
 ## License
- 
-This repository is licensed under [Apache-2.0 license](LICENSE.txt), only because I legally have to.
+
+Original work in this repository is licensed under [Apache-2.0](LICENSE.txt). VEX Robotics headers, libraries,
+firmware, trademarks, and other third-party material remain subject to their respective rights and terms.
